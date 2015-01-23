@@ -1,0 +1,77 @@
+37AA .START phpCAS-1.3.3 ****************** [CAS.php:438]
+37AA .=> phpCAS::client('2.0', 'cas.com', 443, '/cas') [example_simple.php:26]
+37AA .|    => CAS_Client::__construct('2.0', false, 'cas.com', 443, '/cas', true) [CAS.php:340]
+37AA .|    |    Starting a new session ST-19-TuXX6NspSGRhBWT4FVmS-cas01exampleorg [Client.php:906]
+37AA .|    <= ''
+37AA .<= ''
+37AA .=> phpCAS::setCasServerCACert('../phpcas/cas.keystore', false) [example_simple.php:30]
+37AA .<= ''
+37AA .=> CAS_Client::handleLogoutRequests(false, false) [CAS.php:1193]
+37AA .|    Not a logout request [Client.php:1689]
+37AA .<= ''
+37AA .=> phpCAS::forceAuthentication() [example_simple.php:42]
+37AA .|    => CAS_Client::forceAuthentication() [CAS.php:1015]
+37AA .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+37AA .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+37AA .|    |    |    |    no user found [Client.php:1592]
+37AA .|    |    |    <= false
+37AA .|    |    |    no ticket found [Client.php:1453]
+37AA .|    |    <= false
+37AA .|    |    => CAS_Client::redirectToCas(false) [Client.php:1254]
+37AA .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1613]
+37AA .|    |    |    |    => CAS_Client::getURL() [Client.php:342]
+37AA .|    |    |    |    |    Final URI: http://127.0.0.1:8082/phpcas/demo/example_simple.php [Client.php:3466]
+37AA .|    |    |    |    <= 'http://127.0.0.1:8082/phpcas/demo/example_simple.php'
+37AA .|    |    |    <= 'https://cas.com/cas/login?service=http%3A%2F%2F127.0.0.1%3A8082%2Fphpcas%2Fdemo%2Fexample_simple.php'
+37AA .|    |    |    Redirect to : https://cas.com/cas/login?service=http%3A%2F%2F127.0.0.1%3A8082%2Fphpcas%2Fdemo%2Fexample_simple.php [Client.php:1620]
+37AA .|    |    |    exit()
+37AA .|    |    |    -
+37AA .|    |    -
+37AA .|    -
+6DBC .START phpCAS-1.3.3 ****************** [CAS.php:438]
+6DBC .=> phpCAS::client('2.0', 'cas.com', 443, '/cas') [example_simple.php:26]
+6DBC .|    => CAS_Client::__construct('2.0', false, 'cas.com', 443, '/cas', true) [CAS.php:340]
+6DBC .|    |    Starting a new session ST-19-TuXX6NspSGRhBWT4FVmS-cas01exampleorg [Client.php:906]
+6DBC .|    |    Ticket 'ST-20-J5blypndOkx7HlCOwnVQ-cas01.example.org' found [Client.php:988]
+6DBC .|    <= ''
+6DBC .<= ''
+6DBC .=> phpCAS::setCasServerCACert('../phpcas/cas.keystore', false) [example_simple.php:30]
+6DBC .<= ''
+6DBC .=> CAS_Client::handleLogoutRequests(false, false) [CAS.php:1193]
+6DBC .|    Not a logout request [Client.php:1689]
+6DBC .<= ''
+6DBC .=> phpCAS::forceAuthentication() [example_simple.php:42]
+6DBC .|    => CAS_Client::forceAuthentication() [CAS.php:1015]
+6DBC .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+6DBC .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+6DBC .|    |    |    |    no user found [Client.php:1592]
+6DBC .|    |    |    <= false
+6DBC .|    |    |    CAS 2.0 ticket `ST-20-J5blypndOkx7HlCOwnVQ-cas01.example.org' is present [Client.php:1406]
+6DBC .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1409]
+6DBC .|    |    |    |     [Client.php:3101]
+6DBC .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:3108]
+6DBC .|    |    |    |    |    => CAS_Client::getURL() [Client.php:453]
+6DBC .|    |    |    |    |    |    Final URI: http://127.0.0.1:8082/phpcas/demo/example_simple.php [Client.php:3466]
+6DBC .|    |    |    |    |    <= 'http://127.0.0.1:8082/phpcas/demo/example_simple.php'
+6DBC .|    |    |    |    <= 'https://cas.com/cas/serviceValidate?service=http%3A%2F%2F127.0.0.1%3A8082%2Fphpcas%2Fdemo%2Fexample_simple.php'
+6DBC .|    |    |    |    => CAS_Client::_readURL('https://cas.com/cas/serviceValidate?service=http%3A%2F%2F127.0.0.1%3A8082%2Fphpcas%2Fdemo%2Fexample_simple.php&ticket=ST-20-J5blypndOkx7HlCOwnVQ-cas01.example.org', NULL, NULL, NULL) [Client.php:3118]
+6DBC .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:242]
+6DBC .|    |    |    |    |    |    CURL: Set CURLOPT_CAINFO ../phpcas/cas.keystore [CurlRequest.php:129]
+6DBC .|    |    |    |    |    |    curl_exec() failed [CurlRequest.php:77]
+6DBC .|    |    |    |    |    <= false
+6DBC .|    |    |    |    <= false
+6DBC .|    |    |    |    could not open URL 'https://cas.com/cas/serviceValidate?service=http%3A%2F%2F127.0.0.1%3A8082%2Fphpcas%2Fdemo%2Fexample_simple.php&ticket=ST-20-J5blypndOkx7HlCOwnVQ-cas01.example.org' to validate (CURL error #77: error setting certificate verify locations:
+6DBC .|    |    |    |      CAfile: ../phpcas/cas.keystore
+6DBC .|    |    |    |      CApath: none) [Client.php:3121]
+6DBC .|    |    |    |    => CAS_AuthenticationException::__construct(CAS_Client, 'Ticket not validated', 'https://cas.com/cas/serviceValidate?service=http%3A%2F%2F127.0.0.1%3A8082%2Fphpcas%2Fdemo%2Fexample_simple.php&ticket=ST-20-J5blypndOkx7HlCOwnVQ-cas01.example.org', true) [Client.php:3125]
+6DBC .|    |    |    |    |    => CAS_Client::getURL() [AuthenticationException.php:76]
+6DBC .|    |    |    |    |    <= 'http://127.0.0.1:8082/phpcas/demo/example_simple.php'
+6DBC .|    |    |    |    |    CAS URL: https://cas.com/cas/serviceValidate?service=http%3A%2F%2F127.0.0.1%3A8082%2Fphpcas%2Fdemo%2Fexample_simple.php&ticket=ST-20-J5blypndOkx7HlCOwnVQ-cas01.example.org [AuthenticationException.php:79]
+6DBC .|    |    |    |    |    Authentication failure: Ticket not validated [AuthenticationException.php:80]
+6DBC .|    |    |    |    |    Reason: no response from the CAS server [AuthenticationException.php:82]
+6DBC .|    |    |    |    |    exit()
+6DBC .|    |    |    |    |    -
+6DBC .|    |    |    |    -
+6DBC .|    |    |    -
+6DBC .|    |    -
+6DBC .|    -
